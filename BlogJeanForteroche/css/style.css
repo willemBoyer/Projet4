@@ -1,0 +1,62 @@
+body {
+  margin:0;
+}
+
+/*header*/
+header {
+  background:linear-gradient(0deg, blue 10%, #6699CC 90%);
+}
+
+
+header nav {
+  width:50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 3%;
+}
+
+.titleSite {
+  color:white;
+  font-weight: 600;
+  font-size:30px;
+}
+
+/*page accueil*/
+.descriptionHomeImg
+{
+  background-image:url("../images/homeImg.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width:100%;
+  height:700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.descriptionHomeTitle
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+/*footer*/
+
+footer {
+  background-color:#CCCC99;
+}
+
+footer p {
+  color:white;
+  font-weight: 600;
+  font-size:20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding:3%;
+}
