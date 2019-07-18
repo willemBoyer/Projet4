@@ -1,2 +1,2 @@
 <?php
-  require('Homepage.php');
+  require('controller/frontend.php');
