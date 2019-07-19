@@ -2,9 +2,23 @@ body {
   margin:0;
 }
 
+@font-face
+{
+ font-family: "Roboto";
+ src: url("../font/Roboto-Regular.ttf");
+
+}
+
+*
+{
+  font-family:"Roboto",sans-serif;
+}
+
 /*header*/
 header {
   background:linear-gradient(0deg, blue 10%, #6699CC 90%);
+  display:flex;
+  flex-direction: row;
 }
 
 
@@ -23,6 +37,39 @@ header nav {
   font-size:30px;
 }
 
+/*espace connexion admin*/
+.adminCo {
+  text-align: center;
+  width:5%;
+  position: absolute;
+  right:5%;
+  top:5%;
+  display: flex;
+  color:white;
+  background-color: black;
+  border:2px solid white;
+  border-radius: 5%;
+}
+
+
+.fa-user {
+  padding-left:5%;
+  padding-right:5%;
+  position: relative;
+  top: 8px;
+}
+
+.adminButtonCo {
+  margin:0;
+  padding:10%;
+  font-size:16px;
+}
+
+#formCo {
+  position: absolute;
+  right:2%;
+  top:5%;
+}
 /*page accueil*/
 .descriptionHomeImg
 {
@@ -43,6 +90,41 @@ header nav {
   margin-left: auto;
   margin-right: auto;
   color: white;
+}
+
+/*page admin*/
+
+.ecritureJean {
+  width:50%;
+  border:2px solid black;
+  margin-top:2%;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 2%;
+}
+
+.ecritureJean label {
+  text-align: center;
+  margin:2%;
+  width: 100%;
+  font-size: 16px;
+}
+
+.titleAdmin {
+  margin:2%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.chapterDone {
+  margin-top:2%;
+  border-top: 2px solid grey;
+}
+
+#textConfirm {
+  margin:2% 0 0 2%;
 }
 /*footer*/
 
