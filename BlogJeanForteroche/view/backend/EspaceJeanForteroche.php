@@ -11,6 +11,7 @@
 <?php $TinyMCE = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
+
     <section>
       <p class="titleAdmin">Création d'un Nouveau Chapitre</p>
       <form class="ecritureJean" method="post">
@@ -18,8 +19,24 @@
         <input id="textConfirm" type="submit" value="Envoyer">
       </form>
     </section>
+
     <section class="chapterDone">
       <p class="titleAdmin">Chapitres déja réalisés : </p>
+
+        <?php
+        while($data = $afficheChapitre->fetch())
+        {
+        ?>
+          <div class="chapter">
+            <h3>Chapitre n°<?php echo $data['idChapitre']; ?></h3>
+            <div>
+              <?php echo $data['texte']; ?>
+        </div>
+        <?php
+        }
+        $afficheChapitre->closeCursor();
+        ?>
     </section>
+
 <?php $content = ob_get_clean(); ?>
 <?php require('view/template.php'); ?>
