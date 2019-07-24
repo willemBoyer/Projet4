@@ -12,26 +12,43 @@
 
 <?php ob_start(); ?>
 
-    <section>
+    <section class="createChapter">
       <p class="titleAdmin">Création d'un Nouveau Chapitre</p>
       <form class="ecritureJean" method="post">
-        <textarea id="text" name="text" rows="25" ></textarea>
+        <input type = "hidden" name = "action" value = "write">
+        <textarea id="text" name="text" rows="28" ></textarea>
         <input id="textConfirm" type="submit" value="Envoyer">
       </form>
     </section>
 
     <section class="chapterDone">
-      <p class="titleAdmin">Chapitres déja réalisés : </p>
+      <p class="titleAdmin">Chapitres déja réalisés</p>
 
         <?php
         while($data = $afficheChapitre->fetch())
         {
         ?>
-          <div class="chapter">
-            <h3>Chapitre n°<?php echo $data['idChapitre']; ?></h3>
-            <div>
+          <div class="chapterZone">
+            <h3>Chapitre n°<?php echo $data['idChapitre']; ?> :</h3>
+            <div class="chapter">
               <?php echo $data['texte']; ?>
-        </div>
+            </div>
+
+            <form method="get">
+              <input type ="hidden" name ="action" value ="update">
+              <input type="hidden" name="idToUpdate" value="<?php echo $data['idChapitre'] ?>">
+              <button id="update" type="submit">Modifier</button>
+            </form>
+
+            <form method="post">
+              <input type = "hidden" name = "action" value = "delete">
+              <input type="hidden" name="idToDelete" value="<?php echo $data['idChapitre'] ?>">
+              <button id="delete" type="submit">Supprimer</button>
+            </form>
+
+            <?php print_r($_POST['action']); ?>
+            <?php print_r($_POST['idToDelete']); ?>
+          </div>
         <?php
         }
         $afficheChapitre->closeCursor();

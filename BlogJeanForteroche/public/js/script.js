@@ -2,7 +2,7 @@
 var i = 0;
 var adminRegButton = $("#adminCo");
 var adminRegForm = $("#formCo");
-adminRegForm.fadeOut();
+adminRegForm.hide();
 
 //Connexion au backoffice adminsitrateur
 if(i == 0) {

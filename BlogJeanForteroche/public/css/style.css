@@ -31,6 +31,10 @@ header nav {
   padding: 3%;
 }
 
+header nav a {
+  text-decoration: none;
+}
+
 .titleSite {
   color:white;
   font-weight: 600;
@@ -70,6 +74,7 @@ header nav {
   right:2%;
   top:5%;
 }
+
 /*page accueil*/
 .descriptionHomeImg
 {
@@ -101,7 +106,21 @@ header nav {
   margin-right: auto;
   text-decoration: underline;
 }
+
+.chapterHome {
+  padding-top:2%;
+  padding-bottom:2%;
+  background-color:#C0C0C0;
+}
+
 /*page admin*/
+.createChapter {
+  background-image:url("../images/route.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding:4% 0 4% 0;
+}
 
 .ecritureJean {
   width:50%;
@@ -110,6 +129,7 @@ header nav {
   margin-left:auto;
   margin-right:auto;
   padding: 2%;
+  background-color: white;
 }
 
 .ecritureJean label {
@@ -120,20 +140,42 @@ header nav {
 }
 
 .titleAdmin {
-  margin:2%;
+  padding: 2%;
   text-align: center;
   font-weight: 600;
   font-size: 20px;
   text-decoration: underline;
+  margin: 0;
 }
 
 .chapterDone {
-  margin-top:2%;
+  margin-top:0;
   border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  background-color: #C0C0C0;
+  padding-bottom: 2%;
 }
 
 #textConfirm {
   margin:2% 0 0 2%;
+}
+
+.chapterZone {
+  width:50%;
+  border:2px solid black;
+  padding: 2%;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.chapterZone h3 {
+  text-decoration: underline;
+}
+
+div.chapterZone:last-child {
+  margin-bottom:0;
 }
 /*footer*/
 
@@ -148,6 +190,8 @@ footer p {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
   padding:3%;
 }
