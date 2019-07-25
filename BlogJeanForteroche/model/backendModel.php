@@ -21,13 +21,13 @@ function getChapter() {
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $reponse = $pdo->query('SELECT * FROM Chapitre');
   return $reponse;
-  $reponse->closeCursor();
+  
 }
 
 function updateChapter() {
   $pdo = new PDO('mysql:host=localhost;dbname=Projet4;charset=utf8', 'root', 'axoloto13');
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $value = ['nvtexte' => $_POST['nvtexte'], 'chapitreUpdate' => $_GET['idToUpdate']];
+  $value = ['nvtexte' => $_POST['nvtexte'], 'chapitreUpdate' => $_POST['idToUpdate']];
   $req = 'UPDATE Chapitre SET texte = :nvtexte  WHERE idChapitre = :chapitreUpdate';
 
   $reponse = $pdo->prepare($req);

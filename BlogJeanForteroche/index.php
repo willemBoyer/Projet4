@@ -1,10 +1,53 @@
 <?php
 
-if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b" || isset($_POST["text"]) || isset($_POST['idToDelete']) || isset($_GET['action'])) {
-  require('controller/backend.php');
-}
-else {
-  require('controller/frontend.php');
+//Exemple de lien appellant une route GET
+//<a href="http://guiller.fr/index.php?action="posts">Blog</a>
+
+// Exemple de formulaire envoyant des informations au router
+//<form>
+//    <input type = "hidden" name = "action" value = "delete">//action router
+//    <input type = "hidden" name = "postId" value = "3" >
+//    <input type = "submit" >
+//</form >
+
+
+function rooter($action) {
+  switch ($action) {
+    case 'write':
+        require('controller/backendController.php');
+        writeChapterController();
+        break;
+    case 'delete':
+        require('controller/backendController.php');
+        deleteChapterController();
+        break;
+    case 'update':
+        require('controller/backendController.php');
+        updateChapterController();
+        break;
+    case 'getUpdate':
+        require('controller/backendController.php');
+        getUpdateChapterController();
+        break;
+    case 'connexion':
+        if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b" || isset($_POST["text"]) || isset($_POST['idToDelete']) || isset($_GET['action'])) {
+          require('controller/backendController.php');
+          connexionAccess();
+        }
+        break;
+
+  }
 }
 
-?>
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+    rooter($action);
+}
+else if(isset($_POST['action'])){
+    $action = $_POST['action'];
+    rooter($action);
+}
+else {
+  require('controller/frontendController.php');
+  getChapter();
+}

@@ -53,6 +53,7 @@ header nav a {
   background-color: black;
   border:2px solid white;
   border-radius: 5%;
+  text-decoration: none;
 }
 
 
@@ -111,6 +112,28 @@ header nav a {
   padding-top:2%;
   padding-bottom:2%;
   background-color:#C0C0C0;
+  display:flex;
+  flex-direction:row;
+  border-top: 2px solid  #424949;
+  border-bottom: 2px solid  #424949;
+}
+
+.selectChapterHome {
+  width:50%;
+}
+
+.selectChapterHome ul li
+{
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 2%;
+  list-style: none;
+}
+.autobio {
+  text-align: center;
+  width:35%;
+  padding:0 7.5% 0 7.5%;
+  font-size:18px;
 }
 
 /*page admin*/

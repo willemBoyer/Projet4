@@ -9,19 +9,22 @@
   </script>
 <?php $TinyMCE = ob_get_clean(); ?>
 
+<?php $connexion = '<a href="index.php" class="adminCo">Retour à l\'accueil</a>' ?>
+
 <?php ob_start(); ?>
 
     <section class="createChapter">
-      <p class="titleAdmin">Modification du chapitre n°<?php echo $_GET['idToUpdate']; ?></p>
+      <p class="titleAdmin">Modification du chapitre n°<?php echo $_POST['idToUpdate']; ?></p>
 
       <form class="ecritureJean" method="post">
         <input type ="hidden" name ="action" value ="update">
+        <input type="hidden" name="idToUpdate" value="<?php echo $_POST['idToUpdate']; ?>">
         <textarea id="text" name="nvtexte" rows="28" ></textarea>
         <input id="textConfirm" type="submit" value="Envoyer">
       </form>
 
     </section>
-    <?php print_r($_GET['action']); ?>
-    <?php print_r($_GET['idToUpdate']); ?>
+    <?php print_r($_POST); ?>
+    <?php print_r($_GET); ?>
 <?php $content = ob_get_clean(); ?>
 <?php require('view/template.php'); ?>

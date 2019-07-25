@@ -10,6 +10,8 @@
   </script>
 <?php $TinyMCE = ob_get_clean(); ?>
 
+<?php $connexion = '<a href="index.php" class="adminCo">Retour à l\'accueil</a>' ?>
+
 <?php ob_start(); ?>
 
     <section class="createChapter">
@@ -34,8 +36,8 @@
               <?php echo $data['texte']; ?>
             </div>
 
-            <form method="get">
-              <input type ="hidden" name ="action" value ="update">
+            <form method="post">
+              <input type ="hidden" name ="action" value ="getUpdate">
               <input type="hidden" name="idToUpdate" value="<?php echo $data['idChapitre'] ?>">
               <button id="update" type="submit">Modifier</button>
             </form>
