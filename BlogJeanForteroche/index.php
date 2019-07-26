@@ -30,12 +30,15 @@ function rooter($action) {
         getUpdateChapterController();
         break;
     case 'connexion':
-        if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b" || isset($_POST["text"]) || isset($_POST['idToDelete']) || isset($_GET['action'])) {
+        if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b") {
           require('controller/backendController.php');
-          connexionAccess();
+          connexionAccessController();
         }
         break;
-
+    case 'chapterRead':
+        require('controller/frontendController.php');
+        getParticularChapterController();
+        break;
   }
 }
 
@@ -49,5 +52,5 @@ else if(isset($_POST['action'])){
 }
 else {
   require('controller/frontendController.php');
-  getChapter();
+  getChapterController();
 }

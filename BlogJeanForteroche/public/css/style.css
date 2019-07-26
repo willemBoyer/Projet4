@@ -122,12 +122,16 @@ header nav a {
   width:50%;
 }
 
-.selectChapterHome ul li
+.selectChapterHome li
 {
   text-align: center;
   font-size: 22px;
   padding-bottom: 2%;
   list-style: none;
+}
+
+.selectChapterHome li a {
+  text-decoration: none;
 }
 .autobio {
   text-align: center;
@@ -135,7 +139,56 @@ header nav a {
   padding:0 7.5% 0 7.5%;
   font-size:18px;
 }
+/*page chapitre*/
 
+.chapterFocus {
+  width:50%;
+  display: block;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border:2px solid black;
+  font-size: 24px;
+  padding: 1% 2.5% 1% 2.5%;
+  text-align:center;
+}
+
+.chapterFocus p:first-child {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.otherChapter {
+  border-top: 2px solid grey;
+  margin-top: 5%;
+  text-align: center;
+  list-style: none;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5% 0 3% 0;
+}
+
+.otherChapter li {
+  padding:0.5%;
+  list-style: none;
+}
+
+.otherChapter li a {
+  text-decoration: none;
+
+}
+
+.backHome {
+  text-align: center;
+  font-size: 24px;
+  color:black;
+  text-decoration: none;
+  margin-left: auto;
+  display: block;
+  margin-right: auto;
+  padding-bottom: 1.5%;
+  border-bottom: 2px solid grey;
+}
 /*page admin*/
 .createChapter {
   background-image:url("../images/route.jpg");

@@ -23,18 +23,16 @@
 
       <div class="selectChapterHome">
         <h2 class="sndTitle">Retrouvez les chapitres en ligne de son dernier roman :</h2>
-        <ul>
           <?php
           while($data = $afficheChapitre->fetch())
           {
           ?>
-              <li><a href='index.php?action="chapterRead"'>Chapitre n°<?php echo $data['idChapitre']; ?></a></li>
+              <li><a href='index.php?action=chapterRead&index=<?php echo $data['idChapitre']; ?>'>Chapitre n°<?php echo $data['idChapitre']; ?></a></li>
 
           <?php
           }
           $afficheChapitre->closeCursor();
           ?>
-        </ul>
       </div>
 
       <div class="autobio">

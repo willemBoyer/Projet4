@@ -36,7 +36,7 @@ function getChapterController() {
     require('view/backend/EspaceJeanForterocheUpdateText.php');
   }
 
-  function connexionAccess()
+  function connexionAccessController()
   {
     require('model/backendModel.php');
     $afficheChapitre = getChapter();
