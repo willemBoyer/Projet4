@@ -151,13 +151,32 @@ header nav a {
   font-size: 24px;
   padding: 1% 2.5% 1% 2.5%;
   text-align:center;
+  text-decoration: none;
 }
 
 .chapterFocus p:first-child {
-  text-decoration: underline;
   font-weight: bold;
 }
 
+#formComment {
+  width:64%;
+  border:2px solid grey;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  background-color: #cad7d7;
+}
+
+#formComment form input, #formComment form textarea, #formComment button  {
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 2% 0 2% 0;
+  font-size: 16px;
+}
 .otherChapter {
   border-top: 2px solid grey;
   margin-top: 5%;
@@ -188,6 +207,32 @@ header nav a {
   margin-right: auto;
   padding-bottom: 1.5%;
   border-bottom: 2px solid grey;
+}
+
+.chapterTitle {
+  text-decoration: underline;
+}
+
+.commentSpace {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-top:2px solid grey;
+}
+.commentSpace>p {
+  color:grey;
+  text-decoration: underline;
+}
+
+.comment {
+  border:2px solid black;
+  border-radius: 25px;
+  margin-bottom: 2%;
+}
+
+.comment>p:first-child {
+  text-align: left;
+  padding-left: 4%;
 }
 /*page admin*/
 .createChapter {
@@ -253,6 +298,41 @@ header nav a {
 div.chapterZone:last-child {
   margin-bottom:0;
 }
+
+.buttonChapterZone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#update {
+  width:120%;
+  padding: 3%;
+}
+
+#delete {
+  width:120%;
+  padding: 3%;
+}
+
+#update button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  border:2px solid black;
+  font-size: 18px;
+}
+
+#delete button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  border:2px solid black;
+  font-size: 18px;
+}
+
 /*footer*/
 
 footer {

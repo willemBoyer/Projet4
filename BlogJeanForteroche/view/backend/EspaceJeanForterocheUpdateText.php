@@ -24,7 +24,6 @@
       </form>
 
     </section>
-    <?php print_r($_POST); ?>
-    <?php print_r($_GET); ?>
+
 <?php $content = ob_get_clean(); ?>
 <?php require('view/template.php'); ?>

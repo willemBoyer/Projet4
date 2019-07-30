@@ -16,11 +16,13 @@
 
     <section class="createChapter">
       <p class="titleAdmin">Création d'un Nouveau Chapitre</p>
+
       <form class="ecritureJean" method="post">
         <input type = "hidden" name = "action" value = "write">
         <textarea id="text" name="text" rows="28" ></textarea>
         <input id="textConfirm" type="submit" value="Envoyer">
       </form>
+
     </section>
 
     <section class="chapterDone">
@@ -36,20 +38,21 @@
               <?php echo $data['texte']; ?>
             </div>
 
-            <form method="post">
-              <input type ="hidden" name ="action" value ="getUpdate">
-              <input type="hidden" name="idToUpdate" value="<?php echo $data['idChapitre'] ?>">
-              <button id="update" type="submit">Modifier</button>
-            </form>
+            <div class="buttonChapterZone">
 
-            <form method="post">
-              <input type = "hidden" name = "action" value = "delete">
-              <input type="hidden" name="idToDelete" value="<?php echo $data['idChapitre'] ?>">
-              <button id="delete" type="submit">Supprimer</button>
-            </form>
+              <form id="update" method="post">
+                <input type ="hidden" name ="action" value ="getUpdate">
+                <input type="hidden" name="idToUpdate" value="<?php echo $data['idChapitre'] ?>">
+                <button type="submit">Modifier</button>
+              </form>
 
-            <?php print_r($_POST['action']); ?>
-            <?php print_r($_POST['idToDelete']); ?>
+              <form id="delete" method="post">
+                <input type = "hidden" name = "action" value = "delete">
+                <input type="hidden" name="idToDelete" value="<?php echo $data['idChapitre'] ?>">
+                <button type="submit">Supprimer</button>
+              </form>
+
+            </div>
           </div>
         <?php
         }

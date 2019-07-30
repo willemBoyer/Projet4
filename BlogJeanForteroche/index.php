@@ -39,15 +39,22 @@ function rooter($action) {
         require('controller/frontendController.php');
         getParticularChapterController();
         break;
+    case 'comment':
+        require('controller/frontendController.php');
+        writeCommentController();
   }
 }
 
-if (isset($_GET['action'])) {
-    $action = $_GET['action'];
+if (isset($_POST['action']) && $_POST['action'] == "comment") {
+    $action = $_POST['action'];
     rooter($action);
 }
 else if(isset($_POST['action'])){
     $action = $_POST['action'];
+    rooter($action);
+}
+else if (isset($_GET['action'])) {
+    $action = $_GET['action'];
     rooter($action);
 }
 else {

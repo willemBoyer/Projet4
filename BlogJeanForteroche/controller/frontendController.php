@@ -9,6 +9,17 @@ function getParticularChapterController() {
   require('model/frontendModel.php');
   $afficheChapitreParticulier = getParticularChapter();
   $afficheChapitre = getChapter();
+  $afficheCommentaire = getComment();
   require('view/frontend/Chapterpage.php');
 }
+
+function writeCommentController() {
+  require('model/frontendModel.php');
+  writeComment();
+  $afficheChapitreParticulier = getParticularChapter();
+  $afficheChapitre = getChapter();
+  $afficheCommentaire = getComment();
+  require('view/frontend/Chapterpage.php');
+}
+
 ?>
