@@ -34,6 +34,10 @@ function rooter($action) {
           require('controller/backendController.php');
           connexionAccessController();
         }
+        else {
+          require('controller/frontendController.php');
+          getChapterController();
+        }
         break;
     case 'chapterRead':
         require('controller/frontendController.php');
@@ -42,6 +46,19 @@ function rooter($action) {
     case 'comment':
         require('controller/frontendController.php');
         writeCommentController();
+        break;
+    case 'signal':
+        require('controller/frontendController.php');
+        signalCommentController();
+        break;
+    case 'deleteCom':
+        require('controller/backendController.php');
+        deleteCommentController();
+        break;
+    case 'adminRedirect':
+        require('controller/backendController.php');
+        getChapterController();
+        break;
   }
 }
 

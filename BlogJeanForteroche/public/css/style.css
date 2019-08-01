@@ -222,6 +222,7 @@ header nav a {
 .commentSpace>p {
   color:grey;
   text-decoration: underline;
+  text-align: center;
 }
 
 .comment {
@@ -234,7 +235,14 @@ header nav a {
   text-align: left;
   padding-left: 4%;
 }
+
+.comment form {
+  width:auto;
+  padding-bottom: 3%;
+  text-align: center;
+}
 /*page admin*/
+
 .createChapter {
   background-image:url("../images/route.jpg");
   background-size:cover;
@@ -331,6 +339,20 @@ div.chapterZone:last-child {
   padding: 2%;
   border:2px solid black;
   font-size: 18px;
+}
+
+.comment p {
+  text-align: center;
+}
+
+.signaledCom {
+  color:red;
+}
+
+.comment #deleteCom {
+  width:auto;
+  padding-bottom: 3%;
+  text-align: center;
 }
 
 /*footer*/

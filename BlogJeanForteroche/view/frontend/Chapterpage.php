@@ -22,9 +22,24 @@
           {
       ?>
             <div class="comment">
+
               <p><?php echo $data["name"]; ?> <?php echo $data["dateOf"];?></p>
               <p><?php echo $data["comment"]; ?></p>
+              <?php if ($data["signComment"] == "true")
+                {
+              ?>
+                  <p class="signaledCom">Commentaire signalé !</p>
+              <?php
+                }
+              ?>
+              <form method="post">
+                <input type = "hidden" name = "action" value = "signal">
+                <input type="hidden" name="commentId" value="<?php echo $data['idCom'] ?>">
+                <input id="confirmComment" type="submit" name"confirm" value="Signaler ce commentaire">
+              </form>
+
             </div>
+
       <?php
           }
         $afficheCommentaire->closeCursor();

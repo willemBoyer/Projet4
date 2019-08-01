@@ -22,4 +22,12 @@ function writeCommentController() {
   require('view/frontend/Chapterpage.php');
 }
 
+function signalCommentController() {
+  require('model/frontendModel.php');
+  signalComment();
+  $afficheChapitreParticulier = getParticularChapter();
+  $afficheChapitre = getChapter();
+  $afficheCommentaire = getComment();
+  require('view/frontend/Chapterpage.php');
+}
 ?>

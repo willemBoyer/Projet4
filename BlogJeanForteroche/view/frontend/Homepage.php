@@ -7,7 +7,7 @@
       <i class="fas fa-user"></i>
       <p class="adminButtonCo">Admin</p>
     </div>
-    <form id=formCo method="post">
+    <form id=formCo method="post" action="index.php?action='adminRedirect'">
       <input type = "hidden" name = "action" value = "connexion">
       <input id="idName" type="text" name="ID" value="Identifiant">
       <input id="idPassword" type="password" name="password" value="mdp">
