@@ -1,64 +1,64 @@
 <?php
 
 function getChapterController() {
-  require('model/backendModel.php');
-  $model = new backendModel();
+  require('model/adminModel.php');
+  $model = new adminModel();
   $afficheChapitre = $model->getChapter();
   $afficheCommentaire = $model->getComment();
-  require('view/backend/EspaceJeanForteroche.php');
+  require('view/admin/EspaceJeanForteroche.php');
 }
 
   function writeChapterController()
   {
-    require('model/backendModel.php');
-    $model = new backendModel();
+    require('model/adminModel.php');
+    $model = new adminModel();
     $model->writeChapter();
     $afficheChapitre = $model->getChapter();
     $afficheCommentaire = $model->getComment();
-    require('view/backend/EspaceJeanForteroche.php');
+    echo '<script language="Javascript">document.location.replace("index.php?action=adminRedirect"); </script>';
   }
 
   function deleteChapterController()
   {
-    require('model/backendModel.php');
-    $model = new backendModel();
+    require('model/adminModel.php');
+    $model = new adminModel();
     $model->removeChapter();
     $afficheChapitre = $model->getChapter();
     $afficheCommentaire = $model->getComment();
-    require('view/backend/EspaceJeanForteroche.php');
+    require('view/admin/EspaceJeanForteroche.php');
   }
   function updateChapterController()
   {
-    require('model/backendModel.php');
-    $model = new backendModel();
+    require('model/adminModel.php');
+    $model = new adminModel();
     $model->updateChapter();
     $afficheChapitre = $model->getChapter();
     $afficheCommentaire = $model->getComment();
-    require('view/backend/EspaceJeanForteroche.php');
+    require('view/admin/EspaceJeanForteroche.php');
   }
 
   function getUpdateChapterController()
   {
-    require('view/backend/EspaceJeanForterocheUpdateText.php');
+    require('view/admin/EspaceJeanForterocheUpdateText.php');
   }
 
   function connexionAccessController()
   {
-    require('model/backendModel.php');
-    $model = new backendModel();
+    require('model/adminModel.php');
+    $model = new adminModel();
     $afficheChapitre = $model->getChapter();
     $afficheCommentaire = $model->getComment();
-    require('view/backend/EspaceJeanForteroche.php');
+    require('view/admin/EspaceJeanForteroche.php');
   }
 
   function deleteCommentController()
   {
-    require('model/backendModel.php');
-    $model = new backendModel();
+    require('model/adminModel.php');
+    $model = new adminModel();
     $model->deleteComment();
     $afficheChapitre = $model->getChapter();
     $afficheCommentaire = $model->getComment();
-    require('view/backend/EspaceJeanForteroche.php');
+    require('view/admin/EspaceJeanForteroche.php');
   }
 
 

@@ -1,38 +1,38 @@
 <?php
 
 function getChapterController() {
-  require('model/frontendModel.php');
-  $model = new frontendModel();
+  require('model/userModel.php');
+  $model = new userModel();
   $afficheChapitre = $model->getChapter();
-  require('view/frontend/Homepage.php');
+  require('view/user/Homepage.php');
 }
 
 function getParticularChapterController() {
-  require('model/frontendModel.php');
-  $model = new frontendModel();
+  require('model/userModel.php');
+  $model = new userModel();
   $afficheChapitreParticulier = $model->getParticularChapter();
   $afficheChapitre = $model->getChapter();
   $afficheCommentaire = $model->getComment();
-  require('view/frontend/Chapterpage.php');
+  require('view/user/Chapterpage.php');
 }
 
 function writeCommentController() {
-  require('model/frontendModel.php');
-  $model = new frontendModel();
+  require('model/userModel.php');
+  $model = new userModel();
   $model->writeComment();
   $afficheChapitreParticulier = getParticularChapter();
   $afficheChapitre = getChapter();
   $afficheCommentaire = getComment();
-  require('view/frontend/Chapterpage.php');
+  require('view/user/Chapterpage.php');
 }
 
 function signalCommentController() {
-  require('model/frontendModel.php');
-  $model = new frontendModel();
+  require('model/userModel.php');
+  $model = new userModel();
   $model->signalComment();
   $afficheChapitreParticulier = $model->getParticularChapter();
   $afficheChapitre = $model->getChapter();
   $afficheCommentaire = $model->getComment();
-  require('view/frontend/Chapterpage.php');
+  require('view/user/Chapterpage.php');
 }
 ?>

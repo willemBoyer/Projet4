@@ -1,5 +1,5 @@
 <?php
-class backendModel {
+class adminModel {
   public function writeChapter() {
     $pdo = $this->dbConnect();
     $value = ['texte'=>$_POST["text"]];
@@ -7,7 +7,7 @@ class backendModel {
 
     $reponse = $pdo->prepare($req);
     $reponse->execute($value);
-    echo '<script language="Javascript">document.location.replace("index.php?action=adminRedirect"); </script>';
+
   }
 
   public function removeChapter() {
@@ -20,6 +20,7 @@ class backendModel {
 
   public function getChapter() {
     $pdo = $this->dbConnect();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $reponse = $pdo->query('SELECT * FROM Chapitre');
     return $reponse;
   }
@@ -38,7 +39,7 @@ class backendModel {
 
     $req = 'SELECT idChapitrebis, idCom, name, comment, signComment, DATE_FORMAT(dateOf, "%d/%m/%Y") AS dateOf FROM Commentaire ORDER BY signComment DESC, dateOf DESC';
 
-    $reponse = $pdo->prepare($req, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+    $reponse = $pdo->prepare($req);
     $reponse->execute();
     return $reponse;
   }

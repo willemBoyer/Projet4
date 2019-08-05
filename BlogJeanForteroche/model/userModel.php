@@ -1,8 +1,7 @@
 <?php
-class frontendModel {
+class userModel {
   public function getChapter() {
     $pdo = $this->dbConnect();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $reponse = $pdo->query('SELECT * FROM Chapitre');
     return $reponse;
   }

@@ -14,49 +14,49 @@
 function rooter($action) {
   switch ($action) {
     case 'write':
-        require('controller/backendController.php');
+        require('controller/adminController.php');
         writeChapterController();
         break;
     case 'delete':
-        require('controller/backendController.php');
+        require('controller/adminController.php');
         deleteChapterController();
         break;
     case 'update':
-        require('controller/backendController.php');
+        require('controller/adminController.php');
         updateChapterController();
         break;
     case 'getUpdate':
-        require('controller/backendController.php');
+        require('controller/adminController.php');
         getUpdateChapterController();
         break;
     case 'connexion':
         if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b") {
-          require('controller/backendController.php');
+          require('controller/adminController.php');
           connexionAccessController();
         }
         else {
-          require('controller/frontendController.php');
+          require('controller/userController.php');
           getChapterController();
         }
         break;
     case 'chapterRead':
-        require('controller/frontendController.php');
+        require('controller/userController.php');
         getParticularChapterController();
         break;
     case 'comment':
-        require('controller/frontendController.php');
+        require('controller/userController.php');
         writeCommentController();
         break;
     case 'signal':
-        require('controller/frontendController.php');
+        require('controller/userController.php');
         signalCommentController();
         break;
     case 'deleteCom':
-        require('controller/backendController.php');
+        require('controller/adminController.php');
         deleteCommentController();
         break;
     case 'adminRedirect':
-        require('controller/backendController.php');
+        require('controller/adminController.php');
         getChapterController();
         break;
   }
@@ -75,6 +75,6 @@ else if (isset($_GET['action'])) {
     rooter($action);
 }
 else {
-  require('controller/frontendController.php');
+  require('controller/userController.php');
   getChapterController();
 }
