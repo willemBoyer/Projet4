@@ -2,35 +2,38 @@
 
 function getChapterController() {
   require('model/backendModel.php');
-  $afficheChapitre = getChapter();
-  $afficheCommentaire = getComment();
+  $model = new backendModel();
+  $afficheChapitre = $model->getChapter();
+  $afficheCommentaire = $model->getComment();
   require('view/backend/EspaceJeanForteroche.php');
 }
 
   function writeChapterController()
   {
     require('model/backendModel.php');
-    writeChapter();
-    $afficheChapitre = getChapter();
-    $afficheCommentaire = getComment();
+    $model = new backendModel();
+    $model->writeChapter();
+    $afficheChapitre = $model->getChapter();
+    $afficheCommentaire = $model->getComment();
     require('view/backend/EspaceJeanForteroche.php');
   }
 
   function deleteChapterController()
   {
     require('model/backendModel.php');
-    removeChapter();
-    $afficheChapitre = getChapter();
-    $afficheCommentaire = getComment();
+    $model = new backendModel();
+    $model->removeChapter();
+    $afficheChapitre = $model->getChapter();
+    $afficheCommentaire = $model->getComment();
     require('view/backend/EspaceJeanForteroche.php');
   }
   function updateChapterController()
   {
     require('model/backendModel.php');
-    updateChapter();
-    $_GET = NULL;
-    $afficheChapitre = getChapter();
-    $afficheCommentaire = getComment();
+    $model = new backendModel();
+    $model->updateChapter();
+    $afficheChapitre = $model->getChapter();
+    $afficheCommentaire = $model->getComment();
     require('view/backend/EspaceJeanForteroche.php');
   }
 
@@ -42,17 +45,19 @@ function getChapterController() {
   function connexionAccessController()
   {
     require('model/backendModel.php');
-    $afficheChapitre = getChapter();
-    $afficheCommentaire = getComment();
+    $model = new backendModel();
+    $afficheChapitre = $model->getChapter();
+    $afficheCommentaire = $model->getComment();
     require('view/backend/EspaceJeanForteroche.php');
   }
 
   function deleteCommentController()
   {
     require('model/backendModel.php');
-    deleteComment();
-    $afficheChapitre = getChapter();
-    $afficheCommentaire = getComment();
+    $model = new backendModel();
+    $model->deleteComment();
+    $afficheChapitre = $model->getChapter();
+    $afficheCommentaire = $model->getComment();
     require('view/backend/EspaceJeanForteroche.php');
   }
 
