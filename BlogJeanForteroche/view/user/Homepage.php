@@ -22,7 +22,7 @@
     <section class="chapterHome">
 
       <div class="selectChapterHome">
-        <h2 class="sndTitle">Retrouvez les chapitres en ligne de son dernier roman :</h2>
+        <h2 class="sndTitle">Retrouvez les chapitres en ligne de son dernier roman </h2>
           <?php
           while($data = $afficheChapitre->fetch())
           {

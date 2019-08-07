@@ -1,63 +1,63 @@
 <?php
 
-//Exemple de lien appellant une route GET
-//<a href="http://guiller.fr/index.php?action="posts">Blog</a>
-
-// Exemple de formulaire envoyant des informations au router
-//<form>
-//    <input type = "hidden" name = "action" value = "delete">//action router
-//    <input type = "hidden" name = "postId" value = "3" >
-//    <input type = "submit" >
-//</form >
-
-
 function rooter($action) {
   switch ($action) {
     case 'write':
         require('controller/adminController.php');
-        writeChapterController();
+        $controller = new adminController;
+        $controller->writeChapterController();
         break;
     case 'delete':
         require('controller/adminController.php');
-        deleteChapterController();
+        $controller = new adminController;
+        $controller->deleteChapterController();
         break;
     case 'update':
         require('controller/adminController.php');
-        updateChapterController();
+        $controller = new adminController;
+        $controller->updateChapterController();
         break;
     case 'getUpdate':
         require('controller/adminController.php');
-        getUpdateChapterController();
+        $controller = new adminController;
+        $controller->getUpdateChapterController();
         break;
     case 'connexion':
         if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b") {
           require('controller/adminController.php');
-          connexionAccessController();
+          $controller = new adminController;
+          $controller->connexionAccessController();
         }
         else {
           require('controller/userController.php');
-          getChapterController();
+          $controller = new userController;
+          $controller->getChapterController();
         }
         break;
     case 'chapterRead':
         require('controller/userController.php');
-        getParticularChapterController();
+        $controller = new userController;
+        $controller->getParticularChapterController();
         break;
     case 'comment':
         require('controller/userController.php');
-        writeCommentController();
+        $controller = new userController;
+        $controller->writeCommentController();
         break;
     case 'signal':
         require('controller/userController.php');
-        signalCommentController();
+        $controller = new userController;
+        $controller->signalCommentController();
         break;
     case 'deleteCom':
         require('controller/adminController.php');
-        deleteCommentController();
+        $controller = new adminController;
+        $controller->deleteCommentController();
         break;
     case 'adminRedirect':
         require('controller/adminController.php');
-        getChapterController();
+        $controller = new adminController;
+        $controller->getChapterController();
         break;
   }
 }
@@ -76,5 +76,6 @@ else if (isset($_GET['action'])) {
 }
 else {
   require('controller/userController.php');
-  getChapterController();
+  $controller = new userController;
+  $controller->getChapterController();
 }

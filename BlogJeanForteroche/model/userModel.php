@@ -47,7 +47,7 @@ class userModel {
   }
 
   private function dbConnect() {
-        $pdo = new PDO('mysql:host=localhost;dbname=Projet4;charset=utf8', 'root', 'axoloto13');
+        $pdo = new PDO('mysql:host=localhost;dbname=db345903_willem13;charset=utf8', 'db110005', 'Axoloto13');
         return $pdo;
   }
 }
