@@ -1,5 +1,5 @@
 <?php
-class adminModel {
+class chapterModel {
   public function writeChapter() {
     $pdo = $this->dbConnect();
     $value = ['texte'=>$_POST["text"]];
@@ -10,6 +10,15 @@ class adminModel {
 
   }
 
+  public function getParticularChapter() {
+    $pdo = $this->dbConnect();
+    $value = ['chapitreFocus' => $_GET['index']];
+    $req = 'SELECT texte FROM Chapitre WHERE idChapitre = :chapitreFocus';
+    $reponse = $pdo->prepare($req);
+    $reponse->execute($value);
+    return $reponse;
+  }
+  
   public function removeChapter() {
     $pdo = $this->dbConnect();
     $value = ['chapitreDelete'=>$_POST['idToDelete']];
@@ -34,27 +43,8 @@ class adminModel {
     $reponse->execute($value);
   }
 
-  public function getComment() {
-    $pdo = $this->dbConnect();
-
-    $req = 'SELECT idChapitrebis, idCom, name, comment, signComment, DATE_FORMAT(dateOf, "%d/%m/%Y") AS dateOf FROM Commentaire ORDER BY signComment DESC, dateOf DESC';
-
-    $reponse = $pdo->prepare($req);
-    $reponse->execute();
-    return $reponse;
-  }
-
-  public function deleteComment() {
-    $pdo = $this->dbConnect();
-    $value = ['commentaireDelete' => $_POST['commentId']];
-    $req = 'DELETE FROM `Commentaire` WHERE `idCom` = :commentaireDelete';
-    $reponse = $pdo->prepare($req);
-    $reponse->execute($value);
-  }
-
   private function dbConnect() {
-        $pdo = new PDO('mysql:host=localhost;dbname=db345903_willem13;charset=utf8', 'db110005', 'Axoloto13');
+        $pdo = new PDO('mysql:host=localhost;dbname=Projet4;charset=utf8', 'root', 'axoloto13');
         return $pdo;
   }
 }
-?>

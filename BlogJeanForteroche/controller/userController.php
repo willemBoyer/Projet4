@@ -1,38 +1,46 @@
 <?php
 class userController {
   public function getChapterController() {
-    require('model/userModel.php');
-    $model = new userModel();
-    $afficheChapitre = $model->getChapter();
+    require('model/chapterModel.php');
+    require('model/commentModel.php');
+    $modelChapter = new chapterModel();
+    $modelComment = new commentModel();
+    $afficheChapitre = $modelChapter->getChapter();
     require('view/user/Homepage.php');
   }
 
   public function getParticularChapterController() {
-    require('model/userModel.php');
-    $model = new userModel();
-    $afficheChapitreParticulier = $model->getParticularChapter();
-    $afficheChapitre = $model->getChapter();
-    $afficheCommentaire = $model->getComment();
+    require('model/chapterModel.php');
+    require('model/commentModel.php');
+    $modelChapter = new chapterModel();
+    $modelComment = new commentModel();
+    $afficheChapitreParticulier = $modelChapter->getParticularChapter();
+    $afficheChapitre = $modelChapter->getChapter();
+    $afficheCommentaire = $modelComment->getComment();
     require('view/user/Chapterpage.php');
   }
 
   public function writeCommentController() {
-    require('model/userModel.php');
-    $model = new userModel();
-    $model->writeComment();
-    $afficheChapitreParticulier = getParticularChapter();
-    $afficheChapitre = getChapter();
-    $afficheCommentaire = getComment();
+    require('model/chapterModel.php');
+    require('model/commentModel.php');
+    $modelChapter = new chapterModel();
+    $modelComment = new commentModel();
+    $modelComment->writeComment();
+    $afficheChapitreParticulier = $modelChapter->getParticularChapter();
+    $afficheChapitre = $modelChapter->getChapter();
+    $afficheCommentaire = $modelComment->getComment();
     require('view/user/Chapterpage.php');
   }
 
   public function signalCommentController() {
-    require('model/userModel.php');
-    $model = new userModel();
-    $model->signalComment();
-    $afficheChapitreParticulier = $model->getParticularChapter();
-    $afficheChapitre = $model->getChapter();
-    $afficheCommentaire = $model->getComment();
+    require('model/chapterModel.php');
+    require('model/commentModel.php');
+    $modelChapter = new chapterModel();
+    $modelComment = new commentModel();
+    $modelComment->signalComment();
+    $afficheChapitreParticulier = $modelChapter->getParticularChapter();
+    $afficheChapitre = $modelChapter->getChapter();
+    $afficheCommentaire = $modelComment->getComment();
     require('view/user/Chapterpage.php');
   }
 }

@@ -36,7 +36,7 @@
           <div class="chapterZone">
             <h3>Chapitre n°<?php echo $data['idChapitre']; $i = $data['idChapitre']; ?> :</h3>
             <div class="chapter">
-              <?php echo $data['texte']; ?>
+              <?php echo $data['texte'];?>
             </div>
 
             <div class="commentSpace">
@@ -76,6 +76,7 @@
 
               <form id="update" method="post">
                 <input type ="hidden" name ="action" value ="getUpdate">
+                <input type ="hidden" name ="textPlace" value ='<?php echo $data['texte']; ?>'>
                 <input type="hidden" name="idToUpdate" value="<?php echo $i ?>">
                 <button type="submit">Modifier</button>
               </form>

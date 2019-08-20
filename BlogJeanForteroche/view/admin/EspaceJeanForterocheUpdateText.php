@@ -19,7 +19,7 @@
       <form class="ecritureJean" method="post">
         <input type ="hidden" name ="action" value ="update">
         <input type="hidden" name="idToUpdate" value="<?php echo $_POST['idToUpdate']; ?>">
-        <textarea id="text" name="nvtexte" rows="28" ></textarea>
+        <textarea id="text" name="nvtexte" rows="28"><?php echo $_POST['textPlace']; ?></textarea>
         <input id="textConfirm" type="submit" value="Envoyer">
       </form>
 
