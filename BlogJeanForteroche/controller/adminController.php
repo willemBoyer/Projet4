@@ -31,7 +31,7 @@ class adminController {
     $afficheChapitre = $modelChapter->getChapter();
     $afficheCommentaire = $modelComment->getComment();
     $modelChapter->removeChapter();
-    require('view/admin/EspaceJeanForteroche.php');
+    echo '<script language="Javascript">document.location.replace("index.php?action=adminRedirect"); </script>';
   }
   public function updateChapterController()
   {

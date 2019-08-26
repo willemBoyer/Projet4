@@ -23,16 +23,9 @@ function rooter($action) {
         $controller->getUpdateChapterController();
         break;
     case 'connexion':
-        if (isset($_POST["ID"]) && $_POST["ID"] == "a" && isset($_POST["password"]) && $_POST["password"] == "b") {
           require('controller/adminController.php');
           $controller = new adminController;
           $controller->connexionAccessController();
-        }
-        else {
-          require('controller/userController.php');
-          $controller = new userController;
-          $controller->getChapterController();
-        }
         break;
     case 'chapterRead':
         require('controller/userController.php');

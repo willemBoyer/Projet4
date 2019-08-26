@@ -13,19 +13,22 @@
       <?php
         $data = $afficheChapitreParticulier->fetch();
         echo $data['texte'];
+        $i = $data['idChapitre'];
       ?>
     </div>
     <div class="commentSpace">
       <p>Commentaires :</p>
       <?php
-        while($data = $afficheCommentaire->fetch())
+        $data2 = $afficheCommentaire->fetchAll();
+        foreach ($data2 as $dataCom) {
+          if($dataCom["idChapitrebis"] == $i)
           {
       ?>
             <div class="comment">
 
-              <p><?php echo $data["name"]; ?> <?php echo $data["dateOf"];?></p>
-              <p><?php echo $data["comment"]; ?></p>
-              <?php if ($data["signComment"] == "true")
+              <p><?php echo $dataCom["name"]; ?> <?php echo $dataCom["dateOf"];?></p>
+              <p><?php echo $dataCom["comment"]; ?></p>
+              <?php if ($dataCom["signComment"] == "true")
                 {
               ?>
                   <p class="signaledCom">Commentaire signalé !</p>
@@ -34,7 +37,7 @@
               ?>
               <form method="post">
                 <input type = "hidden" name = "action" value = "signal">
-                <input type="hidden" name="commentId" value="<?php echo $data['idCom'] ?>">
+                <input type="hidden" name="commentId" value="<?php echo $dataCom['idCom'] ?>">
                 <input id="confirmComment" type="submit" name"confirm" value="Signaler ce commentaire">
               </form>
 
@@ -42,6 +45,7 @@
 
       <?php
           }
+        }
         $afficheCommentaire->closeCursor();
         ?>
     </div>

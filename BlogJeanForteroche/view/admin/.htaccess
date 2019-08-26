@@ -1,0 +1,4 @@
+AuthName "Page d'administration"
+AuthType Basic
+AuthUserFile "/websites/xn--boyerbirwillem-2pb.com/www/BlogJeanForteroche/view/admin/.htpassword"
+Require valid-user

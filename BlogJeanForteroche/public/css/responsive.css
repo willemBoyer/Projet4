@@ -1,0 +1,380 @@
+@media (max-width: 500px) {
+  body {
+    margin:0;
+  }
+
+  @font-face
+  {
+   font-family: "Roboto";
+   src: url("../font/Roboto-Regular.ttf");
+
+  }
+
+  *
+  {
+    font-family:"Roboto",sans-serif;
+  }
+
+  /*header*/
+  header {
+    background:linear-gradient(0deg, blue 10%, #6699CC 90%);
+    display:flex;
+    flex-direction:column;
+  }
+
+
+  header nav {
+    width:50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 3%;
+  }
+
+  header nav a {
+    text-decoration: none;
+  }
+
+  .titleSite {
+    color:white;
+    font-weight: 600;
+    font-size:30px;
+  }
+
+  /*espace connexion admin*/
+  .adminCo {
+    text-align: center;
+    width:25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    position: static;
+    display: flex;
+    color:white;
+    background-color: black;
+    border:2px solid white;
+    border-radius: 5%;
+    text-decoration: none;
+  }
+
+
+  .fa-user {
+    padding-left:5%;
+    padding-right:5%;
+    position: relative;
+    top: 8px;
+  }
+
+  .adminButtonCo {
+    margin:0;
+    padding:10%;
+    font-size:16px;
+  }
+
+  #formCo {
+    position: absolute;
+    right:2%;
+    top:5%;
+  }
+
+  /*page accueil*/
+  .descriptionHomeImg
+  {
+    background-image:url("../images/homeImg.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+    height:700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .descriptionHomeTitle
+  {
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+  }
+
+  .sndTitle {
+    text-align: center;
+    width:100%;
+    display: block;
+    margin-top:2%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: underline;
+  }
+
+  .chapterHome {
+    padding-top:2%;
+    padding-bottom:2%;
+    background-color:#C0C0C0;
+    display:block;
+    border-top: 2px solid  #424949;
+    border-bottom: 2px solid  #424949;
+  }
+
+  .selectChapterHome {
+    width:auto;
+    margin: 5%;
+  }
+
+  .selectChapterHome li
+  {
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 2%;
+    list-style: none;
+  }
+
+  .selectChapterHome li a {
+    text-decoration: none;
+  }
+  .autobio {
+    text-align: center;
+    width:auto;
+    font-size:18px;
+  }
+  /*page chapitre*/
+
+  .chapterFocus {
+    width:80%;
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid black;
+    font-size: 24px;
+    padding: 1% 2.5% 1% 2.5%;
+    text-align:center;
+    text-decoration: none;
+  }
+
+  .chapterFocus p:first-child {
+    font-weight: bold;
+  }
+
+  #formComment {
+    width:84%;
+    border:2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    background-color: #cad7d7;
+  }
+
+  #formComment form input, #formComment form textarea, #formComment #stopComment  {
+    width:85%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+  }
+  .otherChapter {
+    border-top: 2px solid grey;
+    margin-top: 5%;
+    text-align: center;
+    list-style: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5% 0 3% 0;
+  }
+
+  .otherChapter li {
+    padding:0.5%;
+    list-style: none;
+  }
+
+  .otherChapter li a {
+    text-decoration: none;
+
+  }
+
+  .backHome {
+    text-align: center;
+    font-size: 24px;
+    color:black;
+    text-decoration: none;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    padding-bottom: 1.5%;
+    border-bottom: 2px solid grey;
+  }
+
+  .chapterTitle {
+    text-decoration: underline;
+  }
+
+  .commentSpace {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top:2px solid grey;
+  }
+  .commentSpace>p {
+    color:grey;
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .comment {
+    border:2px solid black;
+    border-radius: 25px;
+    margin-bottom: 4%;
+  }
+
+  .comment>p:first-child {
+    text-align: left;
+    padding-left: 4%;
+  }
+
+  .comment form {
+    width:auto;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+  /*page admin*/
+
+  .createChapter {
+    background-image:url("../images/route.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:4% 0 4% 0;
+  }
+
+  .ecritureJean {
+    width:50%;
+    border:2px solid black;
+    margin-top:2%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 2%;
+    background-color: white;
+  }
+
+  .ecritureJean label {
+    text-align: center;
+    margin:2%;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .titleAdmin {
+    padding: 2%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline;
+    margin: 0;
+  }
+
+  .chapterDone {
+    margin-top:0;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    background-color: #C0C0C0;
+    padding-bottom: 2%;
+  }
+
+  #textConfirm {
+    margin:2% 0 0 2%;
+  }
+
+  .chapterZone {
+    width:50%;
+    border:2px solid black;
+    padding: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+  }
+
+  .chapterZone h3 {
+    text-decoration: underline;
+  }
+
+  div.chapterZone:last-child {
+    margin-bottom:0;
+  }
+
+  .buttonChapterZone {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #update {
+    width:120%;
+    padding: 3%;
+  }
+
+  #delete {
+    width:120%;
+    padding: 3%;
+  }
+
+  #update button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    border:2px solid black;
+    font-size: 18px;
+  }
+
+  #delete button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    border:2px solid black;
+    font-size: 18px;
+  }
+
+  .comment p {
+    text-align: center;
+  }
+
+  .signaledCom {
+    color:red;
+  }
+
+  .comment #deleteCom {
+    width:auto;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+
+  #confirmComment {
+    width:52%;
+    padding:2%;
+  }
+  /*footer*/
+
+  footer {
+    background-color:#CCCC99;
+  }
+
+  footer p {
+    color:white;
+    font-weight: 600;
+    font-size:20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding:3%;
+  }
+}

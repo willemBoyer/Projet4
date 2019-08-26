@@ -13,7 +13,7 @@
 <?php $connexion = '<a href="index.php" class="adminCo">Retour à l\'accueil</a>' ?>
 
 <?php ob_start(); ?>
-
+    <?php echo realpath('EspaceJeanForteroche.php'); ?>
     <section class="createChapter">
       <p class="titleAdmin">Création d'un Nouveau Chapitre</p>
 
@@ -76,7 +76,7 @@
 
               <form id="update" method="post">
                 <input type ="hidden" name ="action" value ="getUpdate">
-                <input type ="hidden" name ="textPlace" value ='<?php echo $data['texte']; ?>'>
+                <input type ="hidden" name ="textPlace" value ="<?php echo $data['texte']; ?>">
                 <input type="hidden" name="idToUpdate" value="<?php echo $i ?>">
                 <button type="submit">Modifier</button>
               </form>

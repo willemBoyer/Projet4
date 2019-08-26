@@ -2,8 +2,8 @@
   class commentModel {
     public function getComment() {
       $pdo = $this->dbConnect();
-
-      $req = 'SELECT idChapitrebis, idCom, name, comment, signComment, DATE_FORMAT(dateOf, "%d/%m/%Y") AS dateOf FROM Commentaire ORDER BY signComment DESC, dateOf DESC';
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $req = 'SELECT idCom, idChapitrebis, name, comment, signComment, DATE_FORMAT(dateOf, "%d/%m/%Y") AS dateOf FROM Commentaire INNER JOIN Chapitre ON idChapitre = idChapitrebis ORDER BY signComment DESC, dateOf DESC';
 
       $reponse = $pdo->prepare($req);
       $reponse->execute();
@@ -39,7 +39,7 @@
     }
 
     private function dbConnect() {
-          $pdo = new PDO('mysql:host=localhost;dbname=Projet4;charset=utf8', 'root', 'axoloto13');
+          $pdo = new PDO('mysql:host=localhost;dbname=db345903_willem13;charset=utf8', 'db110005', 'Axoloto13');
           return $pdo;
     }
   }

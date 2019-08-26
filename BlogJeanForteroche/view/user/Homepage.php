@@ -9,9 +9,7 @@
     </div>
     <form id=formCo method="post" action="index.php?action='adminRedirect'">
       <input type = "hidden" name = "action" value = "connexion">
-      <input id="idName" type="text" name="ID" value="Identifiant">
-      <input id="idPassword" type="password" name="password" value="mdp">
-      <input id="idConfirm" type="submit" value="confirmer">
+      <input id="idConfirm" class="adminButtonCo" type="submit" value="confirmer">
     </form>
 <?php $connexion = ob_get_clean(); ?>
 

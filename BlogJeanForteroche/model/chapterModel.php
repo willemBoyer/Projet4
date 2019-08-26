@@ -13,16 +13,22 @@ class chapterModel {
   public function getParticularChapter() {
     $pdo = $this->dbConnect();
     $value = ['chapitreFocus' => $_GET['index']];
-    $req = 'SELECT texte FROM Chapitre WHERE idChapitre = :chapitreFocus';
+    $req = 'SELECT * FROM Chapitre WHERE idChapitre = :chapitreFocus';
     $reponse = $pdo->prepare($req);
     $reponse->execute($value);
     return $reponse;
   }
-  
+
   public function removeChapter() {
     $pdo = $this->dbConnect();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $value = ['chapitreDelete'=>$_POST['idToDelete']];
-    $req = 'DELETE FROM `Chapitre` WHERE `idChapitre` = :chapitreDelete';
+    $req = 'DELETE FROM Chapitre WHERE idChapitre = :chapitreDelete';
+    $req2 = 'DELETE FROM `Commentaire` WHERE `idChapitrebis` = :chapitreDelete';
+
+    $reponse2 =  $pdo->prepare($req2);
+    $reponse2->execute($value);
+
     $reponse = $pdo->prepare($req);
     $reponse->execute($value);
   }
@@ -44,7 +50,7 @@ class chapterModel {
   }
 
   private function dbConnect() {
-        $pdo = new PDO('mysql:host=localhost;dbname=Projet4;charset=utf8', 'root', 'axoloto13');
+        $pdo = new PDO('mysql:host=localhost;dbname=db345903_willem13;charset=utf8', 'db110005', 'Axoloto13');
         return $pdo;
   }
 }

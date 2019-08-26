@@ -4,6 +4,6 @@
     <a href="index.php" class="titleSite">Jean Forteroche <i>acteur et écrivain</i></a>
   </nav>
 
-    <?= $connexion; ?>
+    <?= $connexion;?>
 
 </header>
