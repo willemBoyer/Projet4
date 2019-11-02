@@ -12,13 +12,13 @@
 
 <?php $connexion = '<a href="index.php" class="adminCo">Retour à l\'accueil</a>' ?>
 
-<?php ob_start(); ?>
-    <?php echo realpath('EspaceJeanForteroche.php'); ?>
+<?php ob_start(); ?>>
     <section class="createChapter">
       <p class="titleAdmin">Création d'un Nouveau Chapitre</p>
 
       <form class="ecritureJean" method="post" action"index.php?action=''">
         <input type = "hidden" name = "action" value = "write">
+        <label>Chapitre n°</label><input type = "text" name = "numberChapter">
         <textarea id="text" name="text" rows="28" ></textarea>
         <input id="textConfirm" type="submit" value="Envoyer">
       </form>
@@ -34,7 +34,7 @@
         {
         ?>
           <div class="chapterZone">
-            <h3>Chapitre n°<?php echo $data['idChapitre']; $i = $data['idChapitre']; ?> :</h3>
+            <h3>Chapitre n°<?php echo $data['numeroChapitre']; $i = $data['idChapitre']; ?> :</h3>
             <div class="chapter">
               <?php echo $data['texte'];?>
             </div>
@@ -76,6 +76,7 @@
 
               <form id="update" method="post">
                 <input type ="hidden" name ="action" value ="getUpdate">
+                <input type ="hidden" name ="numberChapter" value ="<?php echo $data['numeroChapitre']; ?>">
                 <input type ="hidden" name ="textPlace" value ="<?php echo $data['texte']; ?>">
                 <input type="hidden" name="idToUpdate" value="<?php echo $i ?>">
                 <button type="submit">Modifier</button>

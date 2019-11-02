@@ -23,9 +23,7 @@ function rooter($action) {
         $controller->getUpdateChapterController();
         break;
     case 'connexion':
-          require('controller/adminController.php');
-          $controller = new adminController;
-          $controller->connexionAccessController();
+          header('Location: indexAdmin.php?action=adminRedirect');
         break;
     case 'chapterRead':
         require('controller/userController.php');

@@ -39,7 +39,7 @@
     }
 
     private function dbConnect() {
-          $pdo = new PDO('mysql:host=localhost;dbname=db345903_willem13;charset=utf8', 'db110005', 'Axoloto13');
+          $pdo = new PDO('mysql:host=localhost;dbname=db345903_projet4;charset=utf8', 'db111521', 'Axoloto13');
           return $pdo;
     }
   }

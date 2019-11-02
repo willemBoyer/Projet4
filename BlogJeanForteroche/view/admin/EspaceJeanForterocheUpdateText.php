@@ -14,10 +14,11 @@
 <?php ob_start(); ?>
 
     <section class="createChapter">
-      <p class="titleAdmin">Modification du chapitre n°<?php echo $_POST['idToUpdate']; ?></p>
-
+      <p class="titleAdmin">Modification du chapitre n°<?php echo $_POST['numberChapter']; ?></p>
+<?php echo $_POST['idToUpdate']; ?>
       <form class="ecritureJean" method="post">
         <input type ="hidden" name ="action" value ="update">
+        <label>Chapitre n°</label><input type = "text" name = "numberChapterupdate">
         <input type="hidden" name="idToUpdate" value="<?php echo $_POST['idToUpdate']; ?>">
         <textarea id="text" name="nvtexte" rows="28"><?php echo $_POST['textPlace']; ?></textarea>
         <input id="textConfirm" type="submit" value="Envoyer">

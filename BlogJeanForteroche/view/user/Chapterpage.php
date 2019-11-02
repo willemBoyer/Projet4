@@ -67,7 +67,7 @@
       while($data = $afficheChapitre->fetch())
       {
     ?>
-        <li><a href='index.php?action=chapterRead&index=<?php echo $data['idChapitre']; ?>'>Chapitre n°<?php echo $data['idChapitre']; ?></a></li>
+        <li><a href='index.php?action=chapterRead&index=<?php echo $data['numeroChapitre']; ?>'>Chapitre n°<?php echo $data['numeroChapitre']; ?></a></li>
     <?php
       }
       $afficheChapitre->closeCursor();

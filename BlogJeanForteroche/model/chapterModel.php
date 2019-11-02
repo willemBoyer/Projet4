@@ -2,8 +2,8 @@
 class chapterModel {
   public function writeChapter() {
     $pdo = $this->dbConnect();
-    $value = ['texte'=>$_POST["text"]];
-    $req = "INSERT INTO Chapitre (texte) VALUES (:texte)";
+    $value = ['texte'=>$_POST["text"], 'numeroChapitre'=>$_POST["numberChapter"]];
+    $req = "INSERT INTO Chapitre (texte, numeroChapitre) VALUES (:texte, :numeroChapitre)";
 
     $reponse = $pdo->prepare($req);
     $reponse->execute($value);
@@ -42,15 +42,15 @@ class chapterModel {
 
   public function updateChapter() {
     $pdo = $this->dbConnect();
-    $value = ['nvtexte' => $_POST['nvtexte'], 'chapitreUpdate' => $_POST['idToUpdate']];
-    $req = 'UPDATE Chapitre SET texte = :nvtexte  WHERE idChapitre = :chapitreUpdate';
+    $value = ['nvtexte' => $_POST['nvtexte'], 'chapitreUpdate' => $_POST['idToUpdate'], 'nvnum' => $_POST['numberChapterupdate']];
+    $req = 'UPDATE Chapitre SET texte = :nvtexte, numeroChapitre = :nvnum  WHERE idChapitre = :chapitreUpdate';
 
     $reponse = $pdo->prepare($req);
     $reponse->execute($value);
   }
 
   private function dbConnect() {
-        $pdo = new PDO('mysql:host=localhost;dbname=db345903_willem13;charset=utf8', 'db110005', 'Axoloto13');
+        $pdo = new PDO('mysql:host=localhost;dbname=db345903_projet4;charset=utf8', 'db111521', 'Axoloto13');
         return $pdo;
   }
 }
